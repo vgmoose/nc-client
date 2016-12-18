@@ -17,6 +17,7 @@
 		907A63131E072FD10078B719 /* patch_amfid.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63061E072FD10078B719 /* patch_amfid.c */; };
 		907A63141E072FD10078B719 /* sandbox_escape.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63081E072FD10078B719 /* sandbox_escape.c */; };
 		907A63151E072FD10078B719 /* unsandboxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A630A1E072FD10078B719 /* unsandboxer.c */; };
+		907A63181E0735220078B719 /* iosbinpack64 in Resources */ = {isa = PBXBuildFile; fileRef = 907A63171E0735220078B719 /* iosbinpack64 */; };
 		9CA3627F1E05E922009925BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3627E1E05E922009925BC /* AppDelegate.swift */; };
 		9CA362811E05E922009925BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA362801E05E922009925BC /* ViewController.swift */; };
 		9CA362841E05E922009925BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA362821E05E922009925BC /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		907A630A1E072FD10078B719 /* unsandboxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unsandboxer.c; sourceTree = "<group>"; };
 		907A630B1E072FD10078B719 /* unsandboxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsandboxer.h; sourceTree = "<group>"; };
 		907A63161E0731B40078B719 /* netcat-client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "netcat-client.entitlements"; sourceTree = "<group>"; };
+		907A63171E0735220078B719 /* iosbinpack64 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iosbinpack64; sourceTree = "<group>"; };
 		9CA3627B1E05E922009925BC /* netcat-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "netcat-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA3627E1E05E922009925BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA362801E05E922009925BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				907A63161E0731B40078B719 /* netcat-client.entitlements */,
+				907A63171E0735220078B719 /* iosbinpack64 */,
 				9CA3627E1E05E922009925BC /* AppDelegate.swift */,
 				9CA362801E05E922009925BC /* ViewController.swift */,
 				9CA362821E05E922009925BC /* Main.storyboard */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA362891E05E922009925BC /* LaunchScreen.storyboard in Resources */,
+				907A63181E0735220078B719 /* iosbinpack64 in Resources */,
 				9CA362861E05E922009925BC /* Assets.xcassets in Resources */,
 				9CA362841E05E922009925BC /* Main.storyboard in Resources */,
 			);
@@ -343,7 +347,7 @@
 				CODE_SIGN_ENTITLEMENTS = "netcat-client/netcat-client.entitlements";
 				DEVELOPMENT_TEAM = P928J8LN6U;
 				INFOPLIST_FILE = "netcat-client/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-framework",
@@ -363,7 +367,7 @@
 				CODE_SIGN_ENTITLEMENTS = "netcat-client/netcat-client.entitlements";
 				DEVELOPMENT_TEAM = P928J8LN6U;
 				INFOPLIST_FILE = "netcat-client/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-framework",

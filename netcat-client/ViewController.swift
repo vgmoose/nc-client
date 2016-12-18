@@ -88,9 +88,16 @@ class ViewController: UIViewController {
     
     func gainRoot() {
         
-        DispatchQueue.main.async(execute: { () -> Void in
+        DispatchQueue.global(qos: .background).async {
+            print("This is run on the background queue")
             jb_go();
-        })
+            self.console.log("Getting root!")
+            
+            DispatchQueue.main.async {
+                print("This is run on the main queue, after the previous code in outer block")
+                self.startNC();
+            }
+        }
         
         
     }
