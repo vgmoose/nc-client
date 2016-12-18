@@ -159,7 +159,7 @@ class ConsoleView: UITextView, StreamDelegate {
             self.connected = false
             break
         case Stream.Event.openCompleted:
-            log("Connection successful!")
+            log("Connection successful!\n")
             
             // run on the main thread
             OperationQueue.main.addOperation {

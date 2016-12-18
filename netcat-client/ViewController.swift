@@ -10,14 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var console: ConsoleView!
-    
-//    @objc(UIKeyboardWillShow:)
-//    @objc(UIKeyboardWillHide:)
 
     var hostname: UITextField?
     var port: UITextField?
     
-    let defaultHost: String = "192.168.1.103" //"localhost"
+    let defaultHost: String = "localhost"
     let defaultPort: Int = 4141
         
     override func viewDidLoad() {
