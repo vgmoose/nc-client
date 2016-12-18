@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 
 
-class ConsoleView: UITextView {
+class ConsoleView: UITextView, StreamDelegate {
 
-//    override var hasText: Bool = true
+    // the current command that will be sent
     var command: String = ""
+    
+    // input and output streams for the socket
+    var inputStream: InputStream?
+    var outputStream: OutputStream?
     
     override func insertText(_ text: String) {
         
@@ -28,11 +32,15 @@ class ConsoleView: UITextView {
         
         // if it's a newline, send it
         if (text == "\n") {
-            print("sending " + command)
+            
+            // must be cast to a byte array to send
+            let bytes: [UInt8] = Array(command.utf8)
+            outputStream!.write(bytes, maxLength: bytes.count)
+            
+            // clear command for next time
             command = ""
         }
         
-        print("Typed " + text)
     }
     
     func log(_ text: String) {
@@ -48,31 +56,58 @@ class ConsoleView: UITextView {
     
     func connect(host: String, port: Int) {
         
-        // stream variables
-        var inputStream: InputStream? = InputStream()
-        var outputStream: OutputStream? = OutputStream()
-        
         log("Connecting to \(host):\(port)...")
         
         // connect
         Stream.getStreamsToHost(withName: host, port: port, inputStream: &inputStream, outputStream: &outputStream)
         
-        log("Connection successful!")
-        inputStream!.open()
+        // set delegates and schedule output stream on the main run thread
+        // (see: http://stackoverflow.com/a/28717153 )
+        inputStream!.delegate = self
+        inputStream!.schedule(in: .main, forMode: RunLoopMode.defaultRunLoopMode)
+        
+        // attempt to open streams, when done the delegate's sync's method is invoked
         outputStream!.open()
-        
-        outputStream!.write("Hello world!", maxLength: 100)
-        log("Sent hello world")
-        
-        
-        var buffer = [UInt8](repeating: 0, count: 4096)
-        inputStream!.read(&buffer, maxLength: 100)
-        log(String(describing: buffer))
+        inputStream!.open()
+
+//        var buffer = [UInt8](repeating: 0, count: 4096)
+//        inputStream!.read(&buffer, maxLength: 100)
+//        log(String(describing: buffer))
 
     }
     
     override func deleteBackward() {
-        print("Typed backspace")
+        // delete back a character (may not always be the right character
+        // if input has been received since then, but that's ok)
+        super.deleteBackward()
+        
+        // delete one character from the current command
+        // http://stackoverflow.com/a/24122445
+        command.remove(at: command.index(before: command.endIndex))
     }
     
+    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+        print("EV \(eventCode)")
+
+        switch eventCode {
+        case Stream.Event.errorOccurred:
+            log("Error: \(aStream.streamError?.localizedDescription)")
+            break
+        case Stream.Event.openCompleted:
+            log("Connection successful!")
+            
+            // run on the main thread
+            OperationQueue.main.addOperation {
+                
+                // pop up keyboard
+                self.becomeFirstResponder()
+            }
+            break
+        case Stream.Event.hasBytesAvailable:
+//            log("input: HasBytesAvailable")
+            break
+        default:
+            break
+        }
+    }
 }

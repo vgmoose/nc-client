@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        // welcome message
+        console.log("nc-client for iOS by vgmoose\nCC BY-NC-SA 4.0 license\n")
+        
         var alert = UIAlertController(title: "netcat client", message: "Enter hostname and port to connect. Leave blank and press OK for defaults.", preferredStyle: UIAlertControllerStyle.alert)
         //
         
@@ -62,10 +66,6 @@ class ViewController: UIViewController {
             
             // connect to remote
             self.console.connect(host: host, port: port)
-            
-            // pop up keyboard
-            self.console.becomeFirstResponder()
-
         }
     }
     
