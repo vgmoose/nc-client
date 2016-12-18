@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		907A630C1E072FD10078B719 /* cdhash.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A62F81E072FD10078B719 /* cdhash.c */; };
+		907A630D1E072FD10078B719 /* disable_protections.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A62FA1E072FD10078B719 /* disable_protections.c */; };
+		907A630E1E072FD10078B719 /* drop_payload.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A62FC1E072FD10078B719 /* drop_payload.c */; };
+		907A630F1E072FD10078B719 /* jailbreak.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A62FE1E072FD10078B719 /* jailbreak.c */; };
+		907A63101E072FD10078B719 /* kernel_memory_helpers.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A62FF1E072FD10078B719 /* kernel_memory_helpers.c */; };
+		907A63111E072FD10078B719 /* kernel_sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63011E072FD10078B719 /* kernel_sploit.c */; };
+		907A63121E072FD10078B719 /* offsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63041E072FD10078B719 /* offsets.c */; };
+		907A63131E072FD10078B719 /* patch_amfid.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63061E072FD10078B719 /* patch_amfid.c */; };
+		907A63141E072FD10078B719 /* sandbox_escape.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A63081E072FD10078B719 /* sandbox_escape.c */; };
+		907A63151E072FD10078B719 /* unsandboxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 907A630A1E072FD10078B719 /* unsandboxer.c */; };
 		9CA3627F1E05E922009925BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3627E1E05E922009925BC /* AppDelegate.swift */; };
 		9CA362811E05E922009925BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA362801E05E922009925BC /* ViewController.swift */; };
 		9CA362841E05E922009925BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA362821E05E922009925BC /* Main.storyboard */; };
@@ -16,6 +26,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		907A62F81E072FD10078B719 /* cdhash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdhash.c; sourceTree = "<group>"; };
+		907A62F91E072FD10078B719 /* cdhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdhash.h; sourceTree = "<group>"; };
+		907A62FA1E072FD10078B719 /* disable_protections.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = disable_protections.c; sourceTree = "<group>"; };
+		907A62FB1E072FD10078B719 /* disable_protections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = disable_protections.h; sourceTree = "<group>"; };
+		907A62FC1E072FD10078B719 /* drop_payload.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = drop_payload.c; sourceTree = "<group>"; };
+		907A62FD1E072FD10078B719 /* drop_payload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drop_payload.h; sourceTree = "<group>"; };
+		907A62FE1E072FD10078B719 /* jailbreak.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jailbreak.c; sourceTree = "<group>"; };
+		907A62FF1E072FD10078B719 /* kernel_memory_helpers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_memory_helpers.c; sourceTree = "<group>"; };
+		907A63001E072FD10078B719 /* kernel_memory_helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_memory_helpers.h; sourceTree = "<group>"; };
+		907A63011E072FD10078B719 /* kernel_sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_sploit.c; sourceTree = "<group>"; };
+		907A63021E072FD10078B719 /* kernel_sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_sploit.h; sourceTree = "<group>"; };
+		907A63031E072FD10078B719 /* mach_portal-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mach_portal-Bridging-Header.h"; sourceTree = "<group>"; };
+		907A63041E072FD10078B719 /* offsets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = offsets.c; sourceTree = "<group>"; };
+		907A63051E072FD10078B719 /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		907A63061E072FD10078B719 /* patch_amfid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patch_amfid.c; sourceTree = "<group>"; };
+		907A63071E072FD10078B719 /* patch_amfid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patch_amfid.h; sourceTree = "<group>"; };
+		907A63081E072FD10078B719 /* sandbox_escape.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sandbox_escape.c; sourceTree = "<group>"; };
+		907A63091E072FD10078B719 /* sandbox_escape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sandbox_escape.h; sourceTree = "<group>"; };
+		907A630A1E072FD10078B719 /* unsandboxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unsandboxer.c; sourceTree = "<group>"; };
+		907A630B1E072FD10078B719 /* unsandboxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsandboxer.h; sourceTree = "<group>"; };
 		9CA3627B1E05E922009925BC /* netcat-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "netcat-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA3627E1E05E922009925BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA362801E05E922009925BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +67,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		907A62F71E072FD10078B719 /* jailbreak_data */ = {
+			isa = PBXGroup;
+			children = (
+				907A62F81E072FD10078B719 /* cdhash.c */,
+				907A62F91E072FD10078B719 /* cdhash.h */,
+				907A62FA1E072FD10078B719 /* disable_protections.c */,
+				907A62FB1E072FD10078B719 /* disable_protections.h */,
+				907A62FC1E072FD10078B719 /* drop_payload.c */,
+				907A62FD1E072FD10078B719 /* drop_payload.h */,
+				907A62FE1E072FD10078B719 /* jailbreak.c */,
+				907A62FF1E072FD10078B719 /* kernel_memory_helpers.c */,
+				907A63001E072FD10078B719 /* kernel_memory_helpers.h */,
+				907A63011E072FD10078B719 /* kernel_sploit.c */,
+				907A63021E072FD10078B719 /* kernel_sploit.h */,
+				907A63031E072FD10078B719 /* mach_portal-Bridging-Header.h */,
+				907A63041E072FD10078B719 /* offsets.c */,
+				907A63051E072FD10078B719 /* offsets.h */,
+				907A63061E072FD10078B719 /* patch_amfid.c */,
+				907A63071E072FD10078B719 /* patch_amfid.h */,
+				907A63081E072FD10078B719 /* sandbox_escape.c */,
+				907A63091E072FD10078B719 /* sandbox_escape.h */,
+				907A630A1E072FD10078B719 /* unsandboxer.c */,
+				907A630B1E072FD10078B719 /* unsandboxer.h */,
+			);
+			path = jailbreak_data;
+			sourceTree = "<group>";
+		};
 		9CA362721E05E922009925BC = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +119,7 @@
 				9CA362851E05E922009925BC /* Assets.xcassets */,
 				9CA362871E05E922009925BC /* LaunchScreen.storyboard */,
 				9CA3628A1E05E922009925BC /* Info.plist */,
+				907A62F71E072FD10078B719 /* jailbreak_data */,
 				9CA362901E061FD6009925BC /* ConsoleView.swift */,
 			);
 			path = "netcat-client";
@@ -140,8 +198,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907A63121E072FD10078B719 /* offsets.c in Sources */,
+				907A630C1E072FD10078B719 /* cdhash.c in Sources */,
+				907A630E1E072FD10078B719 /* drop_payload.c in Sources */,
+				907A630D1E072FD10078B719 /* disable_protections.c in Sources */,
+				907A63141E072FD10078B719 /* sandbox_escape.c in Sources */,
+				907A63101E072FD10078B719 /* kernel_memory_helpers.c in Sources */,
 				9CA362811E05E922009925BC /* ViewController.swift in Sources */,
 				9CA362911E061FD6009925BC /* ConsoleView.swift in Sources */,
+				907A63151E072FD10078B719 /* unsandboxer.c in Sources */,
+				907A63131E072FD10078B719 /* patch_amfid.c in Sources */,
+				907A63111E072FD10078B719 /* kernel_sploit.c in Sources */,
+				907A630F1E072FD10078B719 /* jailbreak.c in Sources */,
 				9CA3627F1E05E922009925BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +337,13 @@
 				INFOPLIST_FILE = "netcat-client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-framework",
+					IOKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "netcat-client/jailbreak_data/mach_portal-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -283,8 +356,13 @@
 				INFOPLIST_FILE = "netcat-client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-framework",
+					IOKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "netcat-client/jailbreak_data/mach_portal-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
