@@ -9,9 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var console: ConsoleView!
 
     var hostname: UITextField?
     var port: UITextField?
+    
+    let defaultHost: String = "192.168.1.103" //"localhost"
+    let defaultPort: Int = 4141
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +31,13 @@ class ViewController: UIViewController {
         
         func hostPrompt(textField: UITextField!){
             // add the text field and make the result global
-            textField.placeholder = "Hostname (default: localhost)"
+            textField.placeholder = "Hostname (default: \(defaultHost))"
             hostname = textField
         }
         
         func portPrompt(textField: UITextField!){
             // add the text field and make the result global
-            textField.placeholder = "Port (default: 4141)"
+            textField.placeholder = "Port (default: \(defaultPort))"
             port = textField
         }
         
@@ -48,11 +52,23 @@ class ViewController: UIViewController {
     }
     
     func startNC() {
-        print("Got values")
-        print(hostname!.text)
-        print(port!.text)
+        
+        // get input ports from alert textfields, or defaults
+        var host:String = (hostname!.text! != "") ? hostname!.text! : defaultHost
+        var port:Int = Int(self.port!.text!) ?? defaultPort
 
+        // run on a background thread
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            // connect to remote
+            self.console.connect(host: host, port: port)
+            
+            // pop up keyboard
+            self.console.becomeFirstResponder()
+
+        }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
