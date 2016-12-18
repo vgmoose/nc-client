@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var console: ConsoleView!
+    
+//    @objc(UIKeyboardWillShow:)
+//    @objc(UIKeyboardWillHide:)
 
     var hostname: UITextField?
     var port: UITextField?
@@ -19,10 +22,11 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // set up scrollview for scrolling when keyboard pops up
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
 
-//        let newName : String = alert.textFields![0].text!
-//        print(newName)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,8 +77,8 @@ class ViewController: UIViewController {
     func startNC() {
         
         // get input ports from alert textfields, or defaults
-        var host:String = (hostname!.text! != "") ? hostname!.text! : defaultHost
-        var port:Int = Int(self.port!.text!) ?? defaultPort
+        let host:String = (hostname!.text! != "") ? hostname!.text! : defaultHost
+        let port:Int = Int(self.port!.text!) ?? defaultPort
 
         // run on a background thread
         DispatchQueue.global(qos: .userInitiated).async {
@@ -90,6 +94,27 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.console.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.console.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        self.console.contentInset = contentInset
+    }
 
 }
 

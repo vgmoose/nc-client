@@ -150,10 +150,12 @@ class ConsoleView: UITextView, StreamDelegate {
         switch eventCode {
         case Stream.Event.endEncountered:
             log("Server disconnected\nPress [Enter] to reconnect")
+            self.connecting = false
             self.connected = false
             break
         case Stream.Event.errorOccurred:
             log("Error: \(aStream.streamError?.localizedDescription)\nPress [Enter] to reconnect")
+            self.connecting = false
             self.connected = false
             break
         case Stream.Event.openCompleted:
