@@ -65,7 +65,8 @@ class ViewController: UIViewController {
         alert.addTextField(configurationHandler: portPrompt)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{ (alertAction:UIAlertAction!) in self.startNC()
         }))
-        
+        alert.addAction(UIAlertAction(title: "Gain Root", style: .default, handler:{ (alertAction:UIAlertAction!) in self.gainRoot()
+        }))
         
         self.present(alert, animated: true)
         
@@ -85,6 +86,21 @@ class ViewController: UIViewController {
         }
     }
     
+    func gainRoot() {
+        
+        DispatchQueue.global(qos: .background).async {
+            print("This is run on the background queue")
+            jb_go();
+            self.console.log("Getting root!")
+            
+            DispatchQueue.main.async {
+                print("This is run on the main queue, after the previous code in outer block")
+                self.startNC();
+            }
+        }
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
