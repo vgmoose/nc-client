@@ -15,14 +15,16 @@ class ConsoleView: UITextView, StreamDelegate {
     // the current command that will be sent
     var command: String = ""
     
+    // keep track of if the client is connected or not
+    var connected: Bool = false
+    var connecting: Bool = true
+    
     // input and output streams for the socket
     var inputStream: InputStream?
     var outputStream: OutputStream?
     
     override func insertText(_ text: String) {
-        
-        // move cursor to the end of the box
-        self.selectedRange = NSMakeRange(self.text.characters.count, 0);
+        adjustCursor()
 
         // insert text into this buffer
         super.insertText(text)
@@ -32,6 +34,19 @@ class ConsoleView: UITextView, StreamDelegate {
         
         // if it's a newline, send it
         if (text == "\n") {
+            
+            // if disconnected, try to reconnect here (when enter is hit)
+            if (!connected) {
+                let controller: ViewController = UIApplication.shared.keyWindow?.rootViewController as! ViewController
+                
+                if (!connecting) {
+                    // reprompt connection
+                    connecting = true
+                    controller.viewDidAppear(true)
+                }
+                
+                return
+            }
             
             // must be cast to a byte array to send
             let bytes: [UInt8] = Array(command.utf8)
@@ -43,19 +58,47 @@ class ConsoleView: UITextView, StreamDelegate {
         
     }
     
-    func log(_ text: String) {
+    func recvText() {
+        // start a new thread to listen for incoming text
+        DispatchQueue.global(qos: .userInitiated).async {
+
+            // loop forever, so after receving some text, more can be received
+            while (true) {
+                
+                // create receving buffer (caps at 10KB at a time)
+                var buffer = [UInt8](repeating: 0, count: 10000)
+                
+                // read from socket
+                let bytesRead:Int = self.inputStream!.read(&buffer, maxLength: 10000)
+                
+                // if it's disconnected, exit this loop
+                if (!self.connected || bytesRead <= 0) {
+                    return
+                }
+                
+                // convert to String and output it with no delimiter (comes with \n)
+                self.log(NSString(bytes: buffer,  length: bytesRead, encoding: String.Encoding.utf8.rawValue) as! String, terminator: "")
+                
+            }
+        }
+
+    }
+    
+    func log(_ text: String, terminator:String = "\n") {
         print(text)
         
         // run on the main thread
         OperationQueue.main.addOperation {
+            self.adjustCursor()
             
             // insert the log message
-            super.insertText("\(text)\n")
+            super.insertText("\(text)\(terminator)")
         }
     }
     
     func connect(host: String, port: Int) {
         
+        command = ""
         log("Connecting to \(host):\(port)...")
         
         // connect
@@ -70,34 +113,63 @@ class ConsoleView: UITextView, StreamDelegate {
         outputStream!.open()
         inputStream!.open()
 
-//        var buffer = [UInt8](repeating: 0, count: 4096)
-//        inputStream!.read(&buffer, maxLength: 100)
-//        log(String(describing: buffer))
-
     }
     
     override func deleteBackward() {
+        adjustCursor()
+        
         // delete back a character (may not always be the right character
         // if input has been received since then, but that's ok)
         super.deleteBackward()
         
         // delete one character from the current command
         // http://stackoverflow.com/a/24122445
-        command.remove(at: command.index(before: command.endIndex))
+        if (command.characters.count > 0) {
+            command.remove(at: command.index(before: command.endIndex))
+        }
+    }
+    
+    func adjustCursor() {
+        // move cursor to the end of the text field
+        self.selectedRange = NSMakeRange(self.text.characters.count, 0);
+    }
+    
+    override func paste(_ any: Any?) {
+        adjustCursor()
+
+        // do paste
+        super.paste(any)
+        
+        // update current command (newlines won't trigger a send)
+        command += UIPasteboard.general.string!
     }
     
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         print("EV \(eventCode)")
 
         switch eventCode {
+        case Stream.Event.endEncountered:
+            log("Server disconnected\nPress [Enter] to reconnect")
+            self.connected = false
+            break
         case Stream.Event.errorOccurred:
-            log("Error: \(aStream.streamError?.localizedDescription)")
+            log("Error: \(aStream.streamError?.localizedDescription)\nPress [Enter] to reconnect")
+            self.connected = false
             break
         case Stream.Event.openCompleted:
             log("Connection successful!")
             
             // run on the main thread
             OperationQueue.main.addOperation {
+                // set as connected
+                self.connected = true
+                self.connecting = false
+                
+                // clear command
+                self.command = ""
+                
+                // start receiving loop
+                self.recvText()
                 
                 // pop up keyboard
                 self.becomeFirstResponder()

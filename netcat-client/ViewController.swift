@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     let defaultHost: String = "192.168.1.103" //"localhost"
     let defaultPort: Int = 4141
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,18 +30,33 @@ class ViewController: UIViewController {
         // welcome message
         console.log("nc-client for iOS by vgmoose\nCC BY-NC-SA 4.0 license\n")
         
+        // disable spell checking (messes up some commands)
+        console.autocorrectionType = UITextAutocorrectionType.no;
+        
         var alert = UIAlertController(title: "netcat client", message: "Enter hostname and port to connect. Leave blank and press OK for defaults.", preferredStyle: UIAlertControllerStyle.alert)
         //
         
         func hostPrompt(textField: UITextField!){
             // add the text field and make the result global
             textField.placeholder = "Hostname (default: \(defaultHost))"
+            
+            // load old value if it exists
+            if let hostname = self.hostname {
+                textField.text = hostname.text!
+            }
+            
             hostname = textField
         }
         
         func portPrompt(textField: UITextField!){
             // add the text field and make the result global
             textField.placeholder = "Port (default: \(defaultPort))"
+            
+            // load old value if it exists
+            if let port = self.port {
+                textField.text = port.text!
+            }
+            
             port = textField
         }
         
