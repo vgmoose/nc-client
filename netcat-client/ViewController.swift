@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         alert.addTextField(configurationHandler: portPrompt)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{ (alertAction:UIAlertAction!) in self.startNC()
         }))
-        alert.addAction(UIAlertAction(title: "Gain Root", style: .default, handler:{ (alertAction:UIAlertAction!) in self.startNC()
+        alert.addAction(UIAlertAction(title: "Gain Root", style: .default, handler:{ (alertAction:UIAlertAction!) in self.gainRoot()
         }))
         
         self.present(alert, animated: true)
