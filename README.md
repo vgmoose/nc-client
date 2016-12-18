@@ -2,7 +2,9 @@
 netcat client for iOS
 
 ## Description
-Connect to a server on a port and send bytes over the network.
+Connect to a server on a port and send/receive bytes over the network.
+
+This app was developed to be an on-device solution for connecting to the iOS [kernel exploit](https://bugs.chromium.org/p/project-zero/issues/detail?id=965#c2) published by Google's Project Zero. In particular, the exploit provides access to a root shell on port 4141, and with this app it can be connected to at ```localhost:4141``` from the device itself.
 
 ## License
 [![cc by-nc-sa](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
