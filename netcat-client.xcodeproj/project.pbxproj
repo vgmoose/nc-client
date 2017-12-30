@@ -7,15 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C74E0021FF730D500731F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C74E0011FF730D500731F0E /* AppDelegate.swift */; };
+		9C74E0041FF730D500731F0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C74E0031FF730D500731F0E /* ViewController.swift */; };
+		9C74E0071FF730D500731F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C74E0051FF730D500731F0E /* Main.storyboard */; };
+		9C74E0091FF730D500731F0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C74E0081FF730D500731F0E /* Assets.xcassets */; };
+		9C74E02A1FF731B700731F0E /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA362901E061FD6009925BC /* ConsoleView.swift */; };
+		9C74E02C1FF754A000731F0E /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C74E02B1FF754A000731F0E /* ConsoleView.swift */; };
 		9CA3627F1E05E922009925BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3627E1E05E922009925BC /* AppDelegate.swift */; };
 		9CA362811E05E922009925BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA362801E05E922009925BC /* ViewController.swift */; };
 		9CA362841E05E922009925BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA362821E05E922009925BC /* Main.storyboard */; };
 		9CA362861E05E922009925BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA362851E05E922009925BC /* Assets.xcassets */; };
 		9CA362891E05E922009925BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA362871E05E922009925BC /* LaunchScreen.storyboard */; };
-		9CA362911E061FD6009925BC /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA362901E061FD6009925BC /* ConsoleView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9C74E0101FF730D500731F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CA362731E05E922009925BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C74DFFE1FF730D500731F0E;
+			remoteInfo = "netcat-client-tvos";
+		};
+		9C74E01B1FF730D500731F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CA362731E05E922009925BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C74DFFE1FF730D500731F0E;
+			remoteInfo = "netcat-client-tvos";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9C74DFFF1FF730D500731F0E /* netcat-client-tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "netcat-client-tvos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C74E0011FF730D500731F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C74E0031FF730D500731F0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C74E0061FF730D500731F0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C74E0081FF730D500731F0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C74E00A1FF730D500731F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C74E00F1FF730D500731F0E /* netcat-client-tvosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "netcat-client-tvosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C74E01A1FF730D500731F0E /* netcat-client-tvosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "netcat-client-tvosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C74E02B1FF754A000731F0E /* ConsoleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		9CA3627B1E05E922009925BC /* netcat-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "netcat-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA3627E1E05E922009925BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA362801E05E922009925BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +58,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9C74DFFC1FF730D500731F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E00C1FF730D500731F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E0171FF730D500731F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA362781E05E922009925BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C74E0001FF730D500731F0E /* netcat-client-tvos */ = {
+			isa = PBXGroup;
+			children = (
+				9C74E0011FF730D500731F0E /* AppDelegate.swift */,
+				9C74E0031FF730D500731F0E /* ViewController.swift */,
+				9CA362901E061FD6009925BC /* ConsoleView.swift */,
+				9C74E0051FF730D500731F0E /* Main.storyboard */,
+				9C74E0081FF730D500731F0E /* Assets.xcassets */,
+				9C74E00A1FF730D500731F0E /* Info.plist */,
+			);
+			path = "netcat-client-tvos";
+			sourceTree = "<group>";
+		};
 		9CA362721E05E922009925BC = {
 			isa = PBXGroup;
 			children = (
 				9CA3627D1E05E922009925BC /* netcat-client */,
+				9C74E0001FF730D500731F0E /* netcat-client-tvos */,
 				9CA3627C1E05E922009925BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				9CA3627B1E05E922009925BC /* netcat-client.app */,
+				9C74DFFF1FF730D500731F0E /* netcat-client-tvos.app */,
+				9C74E00F1FF730D500731F0E /* netcat-client-tvosTests.xctest */,
+				9C74E01A1FF730D500731F0E /* netcat-client-tvosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,12 +126,12 @@
 			isa = PBXGroup;
 			children = (
 				9CA3627E1E05E922009925BC /* AppDelegate.swift */,
+				9C74E02B1FF754A000731F0E /* ConsoleView.swift */,
 				9CA362801E05E922009925BC /* ViewController.swift */,
 				9CA362821E05E922009925BC /* Main.storyboard */,
 				9CA362851E05E922009925BC /* Assets.xcassets */,
 				9CA362871E05E922009925BC /* LaunchScreen.storyboard */,
 				9CA3628A1E05E922009925BC /* Info.plist */,
-				9CA362901E061FD6009925BC /* ConsoleView.swift */,
 			);
 			path = "netcat-client";
 			sourceTree = "<group>";
@@ -70,6 +139,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9C74DFFE1FF730D500731F0E /* netcat-client-tvos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C74E0271FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvos" */;
+			buildPhases = (
+				9C74DFFB1FF730D500731F0E /* Sources */,
+				9C74DFFC1FF730D500731F0E /* Frameworks */,
+				9C74DFFD1FF730D500731F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "netcat-client-tvos";
+			productName = "netcat-client-tvos";
+			productReference = 9C74DFFF1FF730D500731F0E /* netcat-client-tvos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C74E00E1FF730D500731F0E /* netcat-client-tvosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C74E0281FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvosTests" */;
+			buildPhases = (
+				9C74E00B1FF730D500731F0E /* Sources */,
+				9C74E00C1FF730D500731F0E /* Frameworks */,
+				9C74E00D1FF730D500731F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C74E0111FF730D500731F0E /* PBXTargetDependency */,
+			);
+			name = "netcat-client-tvosTests";
+			productName = "netcat-client-tvosTests";
+			productReference = 9C74E00F1FF730D500731F0E /* netcat-client-tvosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C74E0191FF730D500731F0E /* netcat-client-tvosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C74E0291FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvosUITests" */;
+			buildPhases = (
+				9C74E0161FF730D500731F0E /* Sources */,
+				9C74E0171FF730D500731F0E /* Frameworks */,
+				9C74E0181FF730D500731F0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C74E01C1FF730D500731F0E /* PBXTargetDependency */,
+			);
+			name = "netcat-client-tvosUITests";
+			productName = "netcat-client-tvosUITests";
+			productReference = 9C74E01A1FF730D500731F0E /* netcat-client-tvosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9CA3627A1E05E922009925BC /* netcat-client */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CA3628D1E05E922009925BC /* Build configuration list for PBXNativeTarget "netcat-client" */;
@@ -93,10 +215,27 @@
 		9CA362731E05E922009925BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = vgmoose;
 				TargetAttributes = {
+					9C74DFFE1FF730D500731F0E = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = C34C2M7MC7;
+						ProvisioningStyle = Automatic;
+					};
+					9C74E00E1FF730D500731F0E = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = C34C2M7MC7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C74DFFE1FF730D500731F0E;
+					};
+					9C74E0191FF730D500731F0E = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = C34C2M7MC7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C74DFFE1FF730D500731F0E;
+					};
 					9CA3627A1E05E922009925BC = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = P928J8LN6U;
@@ -118,11 +257,37 @@
 			projectRoot = "";
 			targets = (
 				9CA3627A1E05E922009925BC /* netcat-client */,
+				9C74DFFE1FF730D500731F0E /* netcat-client-tvos */,
+				9C74E00E1FF730D500731F0E /* netcat-client-tvosTests */,
+				9C74E0191FF730D500731F0E /* netcat-client-tvosUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9C74DFFD1FF730D500731F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C74E0091FF730D500731F0E /* Assets.xcassets in Resources */,
+				9C74E0071FF730D500731F0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E00D1FF730D500731F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E0181FF730D500731F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA362791E05E922009925BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,19 +301,64 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9C74DFFB1FF730D500731F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C74E0041FF730D500731F0E /* ViewController.swift in Sources */,
+				9C74E02A1FF731B700731F0E /* ConsoleView.swift in Sources */,
+				9C74E0021FF730D500731F0E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E00B1FF730D500731F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C74E0161FF730D500731F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CA362771E05E922009925BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9CA362811E05E922009925BC /* ViewController.swift in Sources */,
-				9CA362911E061FD6009925BC /* ConsoleView.swift in Sources */,
+				9C74E02C1FF754A000731F0E /* ConsoleView.swift in Sources */,
 				9CA3627F1E05E922009925BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9C74E0111FF730D500731F0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C74DFFE1FF730D500731F0E /* netcat-client-tvos */;
+			targetProxy = 9C74E0101FF730D500731F0E /* PBXContainerItemProxy */;
+		};
+		9C74E01C1FF730D500731F0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C74DFFE1FF730D500731F0E /* netcat-client-tvos */;
+			targetProxy = 9C74E01B1FF730D500731F0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		9C74E0051FF730D500731F0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C74E0061FF730D500731F0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		9CA362821E05E922009925BC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -168,6 +378,176 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9C74E0211FF730D500731F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvos/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		9C74E0221FF730D500731F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvos/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		9C74E0231FF730D500731F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/netcat-client-tvos.app/netcat-client-tvos";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		9C74E0241FF730D500731F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/netcat-client-tvos.app/netcat-client-tvos";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		9C74E0251FF730D500731F0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "netcat-client-tvos";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		9C74E0261FF730D500731F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C34C2M7MC7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "netcat-client-tvosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vgmoose.netcat-client-tvosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "netcat-client-tvos";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 		9CA3628B1E05E922009925BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -292,6 +672,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9C74E0271FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C74E0211FF730D500731F0E /* Debug */,
+				9C74E0221FF730D500731F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C74E0281FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C74E0231FF730D500731F0E /* Debug */,
+				9C74E0241FF730D500731F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C74E0291FF730D500731F0E /* Build configuration list for PBXNativeTarget "netcat-client-tvosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C74E0251FF730D500731F0E /* Debug */,
+				9C74E0261FF730D500731F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CA362761E05E922009925BC /* Build configuration list for PBXProject "netcat-client" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

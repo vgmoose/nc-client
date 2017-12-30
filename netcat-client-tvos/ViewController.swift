@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var console: ConsoleView!
     
@@ -19,19 +18,19 @@ class ViewController: UIViewController {
     let defaultHost: String = "localhost"
     let defaultPort: Int = 4141
         
+    @IBOutlet weak var inputButton: UIButton!
+    @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var downButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set up scrollview for scrolling when keyboard pops up
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         // welcome message
-        console.log("nc-client for iOS by vgmoose\nCC BY-NC-SA 4.0 license\n")
+        console.log("nc-client for tvOS by vgmoose\nCC BY-NC-SA 4.0 license\n")
         
         // disable spell checking (messes up some commands)
         console.autocorrectionType = UITextAutocorrectionType.no;
@@ -78,7 +77,7 @@ class ViewController: UIViewController {
         // get input ports from alert textfields, or defaults
         let host:String = (hostname!.text! != "") ? hostname!.text! : defaultHost
         let port:Int = Int(self.port!.text!) ?? defaultPort
-
+        
         // run on a background thread
         DispatchQueue.global(qos: .userInitiated).async {
             
@@ -87,12 +86,12 @@ class ViewController: UIViewController {
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -100,13 +99,44 @@ class ViewController: UIViewController {
     
     func keyboardWillShow(notification:NSNotification){
         
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+    }
+    
+    @IBAction func upButtonPress(_ sender: Any) {
+        console.setContentOffset(CGPoint(x: 0, y: console.contentOffset.y - 250), animated: true)
+    }
+    @IBAction func downButtonPress(_ sender: Any) {
+        console.setContentOffset(CGPoint(x: 0, y: console.contentOffset.y + 250), animated: true)
+    }
+    
+    @IBAction func keyboardButtonPress(_ sender: Any) {
+        // prompt for input
         
-        var contentInset:UIEdgeInsets = self.console.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        self.console.contentInset = contentInset
+        if !console.connected
+        {
+            self.console.insertText("\n")
+            return
+        }
+        
+        var alert = UIAlertController(title: "Input Entry", message: "Text entered here will be sent to the remote server.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        var sendText: UITextField?
+        func textPrompt(textField: UITextField!){
+            // add the text field and make the result global
+            textField.placeholder = "text to send"
+            
+            sendText = textField
+        }
+        
+        alert.addTextField(configurationHandler: textPrompt)
+        alert.addAction(UIAlertAction(title: "Send", style: .default, handler:{ (alertAction:UIAlertAction!) in
+            if sendText!.text != nil {
+                self.console.insertText(sendText!.text!)
+            }
+            self.console.insertText("\n")
+        }))
+        
+        
+        self.present(alert, animated: true)
     }
     
     func keyboardWillHide(notification:NSNotification){
@@ -114,6 +144,6 @@ class ViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.console.contentInset = contentInset
     }
-
+    
 }
 
